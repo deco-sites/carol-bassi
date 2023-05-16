@@ -3,6 +3,8 @@ import type { Image } from "deco-sites/std/components/types.ts";
 import type { EditableProps as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+
 
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
@@ -45,6 +47,11 @@ export interface Props {
    * @title Enable Top Search terms
    */
   suggestions?: LoaderReturnType<Suggestion | null>;
+
+  image: {
+    desktop: LiveImage;
+    mobile: LiveImage;
+  };
 }
 
 function Header(
@@ -54,15 +61,16 @@ function Header(
     products,
     navItems = [],
     suggestions,
+    image,
   }: Props,
 ) {
   const searchbar = { ..._searchbar, products, suggestions };
   return (
     <>
       <header style={{ height: headerHeight }}>
-        <div class="bg-base-100 fixed w-full z-50">
+        <div class="bg-white fixed w-full  z-50 sm:bg-transparent sm:hover:bg-white">
           <Alert alerts={alerts} />
-          <Navbar items={navItems} searchbar={searchbar} />
+          <Navbar items={navItems} searchbar={searchbar} image={image}/>
         </div>
 
         <Modals
