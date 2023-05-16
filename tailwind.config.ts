@@ -29,6 +29,11 @@ export default {
     container: {
       center: true,
     },
+    colors: {
+      "primary-black": "#333333",
+      "secondary-black": "#3F4040",
+      "gray": "#666666",
+    },
     extend: {
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
