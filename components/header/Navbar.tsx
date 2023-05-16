@@ -23,16 +23,16 @@ function Navbar({ items, searchbar, image }: {
         style={{ height: navbarHeight }}
         class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
       >
-          <HeaderButton variant="menu" />
+        <HeaderButton variant="menu" />
 
-          <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[180px]">
-              <Image src={image.mobile} alt="logo" width={180} height={30} />
-          </a>
+        <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[180px]">
+          <Image src={image.mobile} alt="logo" width={180} height={30} />
+        </a>
 
-          <div class="flex gap-1">
-            <HeaderButton variant="search" />
-            <HeaderButton variant="cart" />
-          </div>
+        <div class="flex gap-1">
+          <HeaderButton variant="search" />
+          <HeaderButton variant="cart" />
+        </div>
       </div>
 
       {/* Desktop Version */}
@@ -40,7 +40,13 @@ function Navbar({ items, searchbar, image }: {
       <div class="hidden md:flex flex-row h-[100px] justify-between items-center border-b border-base-200 w-full pl-2 pr-6">
         <div class="flex-none">
           <a href="/" aria-label="Store logo" class="block px-4 py-3">
-            <Image src={image.desktop} alt="logo" width={100} height={100} class='w-[340px] h-[100px]' />
+            <Image
+              src={image.desktop}
+              alt="logo"
+              width={100}
+              height={100}
+              class="w-[340px] h-[100px]"
+            />
           </a>
         </div>
 

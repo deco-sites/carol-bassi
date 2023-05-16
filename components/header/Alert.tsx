@@ -20,7 +20,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
         {alerts.map((alert, index) => (
           <Slider.Item index={index} class="carousel-item">
             <span class="text-black text-sm flex justify-center items-center w-screen h-[38px]">
-              {alert} <a href={"/"} class="text-black"> | Shop Now </a>
+              {alert} <a href={"/"} class="text-black">| Shop Now</a>
             </span>
           </Slider.Item>
         ))}

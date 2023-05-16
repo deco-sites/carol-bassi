@@ -5,7 +5,6 @@ import type { LoaderReturnType } from "$live/types.ts";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
-
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
@@ -70,7 +69,7 @@ function Header(
       <header style={{ height: headerHeight }}>
         <div class="bg-white fixed w-full  z-50 sm:bg-transparent sm:hover:bg-white">
           <Alert alerts={alerts} />
-          <Navbar items={navItems} searchbar={searchbar} image={image}/>
+          <Navbar items={navItems} searchbar={searchbar} image={image} />
         </div>
 
         <Modals
