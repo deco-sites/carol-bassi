@@ -96,7 +96,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
           {isVariantOf?.name}
         </h2>
         <div class="flex items-end gap-2">
-          <span class="text-gray font-normal">
+          <span class="text-gray font-normal text-[18px]">
             {formatPrice(price, offers!.priceCurrency!)}
           </span>
         </div>
