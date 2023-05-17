@@ -34,7 +34,7 @@ const variants = {
 
 function Avatar({ content, variant = "default" }: Props) {
   return (
-    <div >
+    <div>
       <div
         class={`rounded-md text-primary-black p-0.5 ${
           colors[content] ?? colors[variant]
