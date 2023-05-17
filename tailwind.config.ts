@@ -33,6 +33,12 @@ export default {
       "primary-black": "#333333",
       "secondary-black": "#3F4040",
       "gray": "#666666",
+      "light-blue": "#ADCFDF",
+      "light-gray": "#EEEEEE",
+      "translucid-black": "#00000080",
+      "extra-translucid-black": "#0000004D",
+      "white": "#FFFFFF",
+      "black": "#000000",
     },
     extend: {
       animation: {

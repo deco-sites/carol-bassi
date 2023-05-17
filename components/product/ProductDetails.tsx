@@ -13,10 +13,9 @@ import SendEventOnLoad from "deco-sites/fashion/components/SendEventOnLoad.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import type { LoaderReturnType } from "$live/types.ts";
+import Toggle from "deco-sites/fashion/islands/Toggle.tsx";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
-import ProductImageZoom from "deco-sites/fashion/islands/ProductImageZoom.tsx";
-import WishlistButton from "../wishlist/WishlistButton.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 
@@ -72,35 +71,33 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
       />
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
-        <div>
-          <span class="text-sm text-base-300">
-            Cod. {gtin}
-          </span>
-        </div>
         <h1>
-          <span class="font-medium text-xl">{name}</span>
+          <span class="font-normal text-[24px] text-primary-black">
+            {isVariantOf?.name}
+          </span>
         </h1>
       </div>
       {/* Prices */}
       <div class="mt-4">
-        <div class="flex flex-row gap-2 items-center">
+        <div class="flex flex-row items-center">
           <span class="line-through text-base-300 text-xs">
-            {formatPrice(listPrice, offers!.priceCurrency!)}
+            {listPrice !== price &&
+              formatPrice(listPrice, offers!.priceCurrency!)}
           </span>
-          <span class="font-medium text-xl text-secondary">
+          <span class="font-normal text-[26px] text-primary-black">
             {formatPrice(price, offers!.priceCurrency!)}
           </span>
         </div>
-        <span class="text-sm text-base-300">
-          {installments}
-        </span>
       </div>
       {/* Sku Selector */}
       <div class="mt-4 sm:mt-6">
         <ProductSelector product={product} />
       </div>
       {/* Add to Cart and Favorites button */}
-      <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+      <div class="mt-4 mb-10 flex flex-col gap-4">
+        <button class="w-full bg-light-blue text-black border-black rounded-none font-normal text-[18px] h-[57px] normal-case">
+          Comprar
+        </button>
         {seller && (
           <AddToCartButton
             skuId={productID}
@@ -111,33 +108,9 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
             productGroupId={product.isVariantOf?.productGroupID ?? ""}
           />
         )}
-        <WishlistButton
-          variant="full"
-          productGroupID={isVariantOf?.productGroupID}
-          productID={productID}
-        />
-      </div>
-      {/* Shipping Simulation */}
-      <div class="mt-8">
-        <ShippingSimulation
-          items={[{
-            id: Number(product.sku),
-            quantity: 1,
-            seller: seller ?? "1",
-          }]}
-        />
       </div>
       {/* Description card */}
-      <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Descrição</summary>
-              <div class="ml-2 mt-2">{description}</div>
-            </details>
-          )}
-        </span>
-      </div>
+      <Toggle description={description || ""} specs="" />
       {/* Analytics Event */}
       <SendEventOnLoad
         event={{
@@ -240,11 +213,11 @@ function Details({
       <>
         <div
           id={id}
-          class="grid grid-cols-1 gap-4 sm:grid-cols-[max-content_40vw_40vw] sm:grid-rows-1 sm:justify-center"
+          class="grid grid-cols-1 gap-4 sm:grid-cols-[auto_auto] sm:grid-rows-1 sm:justify-center"
         >
           {/* Image Slider */}
-          <div class="relative sm:col-start-2 sm:col-span-1 sm:row-start-1">
-            <Slider class="carousel gap-6">
+          <div class="relative sm:hidden">
+            <Slider class="carousel gap-6 sm:hidden">
               {images.map((img, index) => (
                 <Slider.Item
                   index={index}
@@ -266,51 +239,44 @@ function Details({
               ))}
             </Slider>
 
-            <Slider.PrevButton
-              class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
-              disabled
-            >
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-            </Slider.PrevButton>
-
-            <Slider.NextButton
-              class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
-              disabled={images.length < 2}
-            >
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
-            </Slider.NextButton>
-
             <div class="absolute top-2 right-2 bg-base-100 rounded-full">
-              <ProductImageZoom
-                images={images}
-                width={1280}
-                height={1280 * HEIGHT / WIDTH}
-              />
             </div>
           </div>
 
           {/* Dots */}
-          <ul class="flex gap-2 sm:justify-start overflow-auto px-4 sm:px-0 sm:flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
+          <ul class="col-start-1 flex gap-[10px] justify-self-center overflow-auto px-4 sm:hidden">
             {images.map((img, index) => (
-              <li class="min-w-[63px] sm:min-w-[100px]">
+              <li>
                 <Slider.Dot index={index}>
-                  <Image
-                    style={{ aspectRatio: ASPECT_RATIO }}
-                    class="group-disabled:border-base-300 border rounded "
-                    width={63}
-                    height={87.5}
-                    src={img.url!}
-                    alt={img.alternateName}
-                  />
+                  <div class="py-5">
+                    <div class="w-[10px] h-[10px] bg-light-gray group-disabled:bg-light-blue rounded-full" />
+                  </div>
                 </Slider.Dot>
               </li>
             ))}
           </ul>
 
           {/* Product Info */}
-          <div class="px-4 sm:pr-0 sm:pl-6 sm:col-start-3 sm:col-span-1 sm:row-start-1">
+          <div class="px-4 sm:pl-6 sm:col-start-2 sm:row-start-1">
             <ProductInfo page={page} />
           </div>
+          <ul class="flex flex-col gap-10 max-w-[834px] lg:grid lg:grid-cols-2 lg:gap-2">
+            {images.map((img, index) => (
+              <li class="carousel-item">
+                <Image
+                  sizes="(max-width: 640px) 100vw, 24vw"
+                  style={{ aspectRatio: ASPECT_RATIO }}
+                  src={img.url!}
+                  alt={img.alternateName}
+                  width={WIDTH}
+                  height={HEIGHT}
+                  // Preload LCP image for better web vitals
+                  preload={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
         <SliderJS rootId={id}></SliderJS>
       </>
@@ -324,7 +290,7 @@ function Details({
    * reached causing a scrollbar to be rendered.
    */
   return (
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-[50vw_25vw] sm:grid-rows-1 sm:justify-center">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-[auto_auto] sm:grid-rows-1 sm:justify-center">
       {/* Image slider */}
       <ul class="carousel carousel-center gap-6">
         {[images[0], images[1] ?? images[0]].map((img, index) => (
@@ -365,7 +331,7 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
     : maybeVar;
 
   return (
-    <div class="container py-0 sm:py-10">
+    <div class="container max-w-[1440px] py-0 sm:py-10">
       {page ? <Details page={page} variant={variant} /> : <NotFound />}
     </div>
   );
