@@ -54,7 +54,7 @@ function Navbar({ items, searchbar, image }: {
         </div>
 
         <div class="flex-none w-44 flex items-center justify-end gap-2">
-          <HeaderButton  variant="search" />
+          <HeaderButton variant="search" />
 
           <HeaderSearchMenu searchbar={searchbar} />
 
