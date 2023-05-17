@@ -23,8 +23,6 @@ function Navbar({ items, searchbar, image }: {
         style={{ height: navbarHeight }}
         class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
       >
-        <HeaderButton variant="menu" />
-
         <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[180px]">
           <Image src={image.mobile} alt="logo" width={180} height={30} />
         </a>
@@ -32,12 +30,13 @@ function Navbar({ items, searchbar, image }: {
         <div class="flex gap-1">
           <HeaderButton variant="search" />
           <HeaderButton variant="cart" />
+          <HeaderButton variant="menu" />
         </div>
       </div>
 
       {/* Desktop Version */}
 
-      <div class="hidden md:flex flex-row h-[100px] justify-between items-center border-b border-base-200 w-full pl-2 pr-6">
+      <div class="hidden md:flex flex-row h-[100px] justify-between items-center w-full pl-2 pr-6">
         <div class="flex-none">
           <a href="/" aria-label="Store logo" class="block px-4 py-3">
             <Image
@@ -50,17 +49,17 @@ function Navbar({ items, searchbar, image }: {
           </a>
         </div>
 
-        <div class="flex-auto flex justify-center">
+        <div class="flex-auto flex justify-start text-base font-normal  text-black">
           {items.map((item) => <NavItem item={item} />)}
         </div>
 
         <div class="flex-none w-44 flex items-center justify-end gap-2">
-          <HeaderButton variant="search" />
+          <HeaderButton  variant="search" />
 
           <HeaderSearchMenu searchbar={searchbar} />
 
           <a
-            class="btn btn-square btn-ghost"
+            class="bg-transparent hover:bg-transparent border-none text-black"
             href="/login"
             aria-label="Log in"
           >

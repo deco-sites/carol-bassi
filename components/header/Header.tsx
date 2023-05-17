@@ -66,9 +66,9 @@ function Header(
   const searchbar = { ..._searchbar, products, suggestions };
   return (
     <>
-      <header style={{ height: headerHeight }}>
-        <div class="bg-white fixed w-full  z-50 sm:bg-transparent sm:hover:bg-white">
-          <Alert alerts={alerts} />
+      <header>
+        <div class="fixed bg-white w-full  z-50 sm:bg-transparent sm:hover:bg-white ">
+         {/* <Alert alerts={alerts} /> */}
           <Navbar items={navItems} searchbar={searchbar} image={image} />
         </div>
 
