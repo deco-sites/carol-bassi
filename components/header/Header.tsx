@@ -134,7 +134,7 @@ function Header(
           class="fixed bg-white w-full  z-50 sm:bg-transparent sm:hover:bg-white "
           header-color=""
         >
-          <Alert  alerts={alerts} />
+          <Alert alerts={alerts} />
           <Navbar items={navItems} searchbar={searchbar} image={image} />
         </div>
 
