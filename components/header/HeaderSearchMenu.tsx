@@ -17,12 +17,12 @@ export default function HeaderSearchMenu({ searchbar }: Props) {
   const shouldRender = self?.location;
   return (
     <div
-      class={'w-full hidden' }
+      class={"w-full hidden"}
       bar-search=""
     >
       {shouldRender && (
-        <Suspense fallback={<div/>}>
-          <Searchbar {...searchbar}  />
+        <Suspense fallback={<div />}>
+          <Searchbar {...searchbar} />
         </Suspense>
       )}
     </div>

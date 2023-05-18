@@ -14,14 +14,11 @@ declare global {
 function buttonClick() {
   const { displaySearchbar } = useUI();
   const bar: Element | null = document.querySelector("div[bar-search]");
-  if(bar?.classList.value.includes("hidden")){
-  bar?.classList.remove("hidden")
-  }else{
-    bar?.classList.add("hidden")
+  if (bar?.classList.value.includes("hidden")) {
+    bar?.classList.remove("hidden");
+  } else {
+    bar?.classList.add("hidden");
   }
-  
-  
-
 }
 function SearchButton() {
   const { displaySearchbar } = useUI();
@@ -33,8 +30,8 @@ function SearchButton() {
       // onClick={() => {
       //   displaySearchbar.value = !displaySearchbar.peek();
       // }}
-      onClick={()=>buttonClick()}
-      >
+      onClick={() => buttonClick()}
+    >
       <Icon id="MagnifyingGlass" width={20} height={20} strokeWidth={0.1} />
     </Button>
   );

@@ -10,10 +10,6 @@ import type { Props as SearchbarProps } from "deco-sites/fashion/components/sear
 
 import { useUI } from "../../sdk/useUI.ts";
 
-
-
-
-
 function Navbar({ items, searchbar, image }: {
   items: INavItem[];
   searchbar: SearchbarProps;
@@ -25,8 +21,6 @@ function Navbar({ items, searchbar, image }: {
   const { displaySearchbar } = useUI();
   const open = displaySearchbar.value;
 
-  
-  
   return (
     <>
       {/* Mobile Version */}
@@ -71,10 +65,9 @@ function Navbar({ items, searchbar, image }: {
         </div>
 
         <div class="flex-none flex items-center justify-end gap-2">
-          <HeaderSearchMenu searchbar={searchbar}   /> 
+          <HeaderSearchMenu searchbar={searchbar} />
 
-          <HeaderButton variant="search"  />
-         
+          <HeaderButton variant="search" />
 
           <a
             class="bg-transparent hover:bg-transparent border-none text-black"
