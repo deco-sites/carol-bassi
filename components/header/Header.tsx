@@ -8,6 +8,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
+import { useEffect } from "preact/hooks";
 
 export interface NavItem {
   label: string;
@@ -53,6 +54,77 @@ export interface Props {
   };
 }
 
+function colorHeader() {
+  let header1: Element | null;
+  let alert1: Element | null;
+
+  globalThis.addEventListener("scroll", () => {
+    if (!header1) {
+      header1 = document.querySelector("div[header-color]");
+      if (!header1) return;
+    }
+
+    if (!header1) return;
+
+      if (window.scrollY > 40) {
+      header1.classList.remove("sm:bg-transparent");
+      header1.classList.add("sm:bg-[#fffffff0]");
+    } else {
+      header1.classList.remove("sm:bg-[#ffffff0]");
+      header1.classList.add("sm:bg-transparent");
+    }
+    
+
+  });
+
+  globalThis.addEventListener("load", () => {
+    if (!alert1) {
+      alert1 = document.querySelector("div[alert-hiden]");
+      if (!alert) return;
+    }
+    if (!alert1) return;
+    
+    if (!header1) {
+      header1 = document.querySelector("div[header-color]");
+      if (!header1) return;
+    }
+
+    if (!header1) return;
+
+    
+    if (window.location.pathname !== "/" ) {
+      header1.classList.add("sm:bg-white");
+      alert1.classList.remove("hidden");
+    } else{
+      alert1.classList.add("hidden");
+      header1.classList.remove("sm:bg-white");
+    }
+
+       
+  });
+
+  globalThis.addEventListener("scroll", () => {
+    
+
+    if (!alert1) {
+      alert1 = document.querySelector("div[alert-hiden]");
+      if (!alert) return;
+    }
+    if (!alert1) return;
+
+    if(window.scrollY > 40 && window.location.pathname !=="/"){
+      alert1.classList.add("hidden");
+    }else if(window.location.pathname !=="/"){
+      
+      alert1.classList.remove("hidden");
+    }
+    
+
+  });
+  
+}
+
+
 function Header(
   {
     alerts,
@@ -66,9 +138,15 @@ function Header(
   const searchbar = { ..._searchbar, products, suggestions };
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{ __html: `(${colorHeader.toString()})()` }}
+      />
       <header>
-        <div class="fixed bg-white w-full  z-50 sm:bg-transparent sm:hover:bg-white ">
-          {/* <Alert alerts={alerts} /> */}
+        <div
+          class="fixed bg-white w-full  z-50 sm:bg-transparent sm:hover:bg-white "
+          header-color=""
+        >
+          <Alert alerts={alerts} />
           <Navbar items={navItems} searchbar={searchbar} image={image} />
         </div>
 
