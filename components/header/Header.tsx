@@ -89,11 +89,11 @@ function colorHeader() {
 
     if (!header1) return;
 
-    if (window.location.pathname !== "/") {
+    if (window.location.pathname == "/") {
       header1.classList.add("sm:bg-white");
-      alert1.classList.remove("sm:hidden");
-    } else {
       alert1.classList.add("sm:hidden");
+    } else {
+      alert1.classList.remove("sm:hidden");
       header1.classList.remove("sm:bg-white");
     }
   });
