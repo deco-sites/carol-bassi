@@ -24,8 +24,12 @@ function AddToCartButton(
   });
 
   return (
-    <Button data-deco="add-to-cart" {...props} class="w-full">
-      Adicionar à Sacola
+    <Button
+      data-deco="add-to-cart"
+      {...props}
+      class="w-full bg-white text-black border-black rounded-none font-normal text-[18px] h-[57px] normal-case hover:bg-white"
+    >
+      Adicionar ao carrinho
     </Button>
   );
 }

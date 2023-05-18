@@ -27,23 +27,24 @@ interface Props {
 }
 
 const variants = {
-  active: "ring ring-1 ring-offset-base-100 ring-offset-2",
-  disabled:
-    `relative after:absolute after:left-0 after:top-1/2 after:h-[1px] after:bg-red-800 after:w-full after:block after:-rotate-45 after:content-[""]`,
-  default: "",
+  active: " ring-2 min-h-[44px] bg-white",
+  disabled: `min-h-[36px] bg-white !ring-0`,
+  default: "min-h-[36px] bg-white !ring-0",
 };
 
 function Avatar({ content, variant = "default" }: Props) {
   return (
-    <div class="avatar placeholder">
+    <div>
       <div
-        class={`rounded-full w-8  ${colors[content] ?? colors[variant]} ${
-          variants[variant]
-        }`}
+        class={`rounded-md text-primary-black p-0.5 ${
+          colors[content] ?? colors[variant]
+        } ${variants[variant]}`}
       >
-        <span class="text-caption font-caption uppercase">
-          {colors[content] ? "" : content.substring(0, 2)}
-        </span>
+        <div class="border border-[#e3e4e6] rounded-md h-full w-full px-4 py-2">
+          <span class="text-caption font-caption">
+            {colors[content] ? "" : content}
+          </span>
+        </div>
       </div>
     </div>
   );
