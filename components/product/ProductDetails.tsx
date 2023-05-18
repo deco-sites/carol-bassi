@@ -260,7 +260,7 @@ function Details({
           <div class="px-4 sm:pl-6 sm:col-start-2 sm:row-start-1">
             <ProductInfo page={page} />
           </div>
-          <ul class="flex flex-col gap-10 max-w-[834px] lg:grid lg:grid-cols-2 lg:gap-2">
+          <ul class="hidden sm:flex flex-col gap-10 max-w-[834px] lg:grid lg:grid-cols-2 lg:gap-2">
             {images.map((img, index) => (
               <li class="carousel-item">
                 <Image
