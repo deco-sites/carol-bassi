@@ -21,14 +21,14 @@ function Navbar({ items, searchbar, image }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
+        class="md:hidden h-14 flex flex-row items-center border-b border-base-200 w-full pl-2 pr-2"
       >
-        <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[180px]">
-          <Image src={image.mobile} alt="logo" width={180} height={30} />
+        <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[50%]">
+          <Image src={image.mobile} alt="logo"  class="w-[180px] h-[50px]" width={180} height={100} />
         </a>
 
-        <div class="flex gap-1">
-          <HeaderButton variant="search" />
+        <div class="flex w-[50%] justify-end items-end">
+          <HeaderButton  variant="search" />
           <HeaderButton variant="cart" />
           <HeaderButton variant="menu" />
         </div>

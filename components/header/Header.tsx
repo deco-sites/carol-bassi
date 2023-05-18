@@ -66,15 +66,13 @@ function colorHeader() {
 
     if (!header1) return;
 
-      if (window.scrollY > 40) {
+    if (window.scrollY > 40) {
       header1.classList.remove("sm:bg-transparent");
       header1.classList.add("sm:bg-[#fffffff0]");
     } else {
       header1.classList.remove("sm:bg-[#ffffff0]");
       header1.classList.add("sm:bg-transparent");
     }
-    
-
   });
 
   globalThis.addEventListener("load", () => {
@@ -83,7 +81,7 @@ function colorHeader() {
       if (!alert) return;
     }
     if (!alert1) return;
-    
+
     if (!header1) {
       header1 = document.querySelector("div[header-color]");
       if (!header1) return;
@@ -91,39 +89,29 @@ function colorHeader() {
 
     if (!header1) return;
 
-    
-    if (window.location.pathname !== "/" ) {
+    if (window.location.pathname !== "/") {
       header1.classList.add("sm:bg-white");
-      alert1.classList.remove("hidden");
-    } else{
-      alert1.classList.add("hidden");
+      alert1.classList.remove("sm:hidden");
+    } else {
+      alert1.classList.add("sm:hidden");
       header1.classList.remove("sm:bg-white");
     }
-
-       
   });
 
   globalThis.addEventListener("scroll", () => {
-    
-
     if (!alert1) {
       alert1 = document.querySelector("div[alert-hiden]");
       if (!alert) return;
     }
     if (!alert1) return;
 
-    if(window.scrollY > 40 && window.location.pathname !=="/"){
-      alert1.classList.add("hidden");
-    }else if(window.location.pathname !=="/"){
-      
-      alert1.classList.remove("hidden");
+    if (window.scrollY > 40 && window.location.pathname !== "/") {
+      alert1.classList.add("sm:hidden");
+    } else if (window.location.pathname !== "/") {
+      alert1.classList.remove("sm:hidden");
     }
-    
-
   });
-  
 }
-
 
 function Header(
   {
@@ -146,7 +134,7 @@ function Header(
           class="fixed bg-white w-full  z-50 sm:bg-transparent sm:hover:bg-white "
           header-color=""
         >
-          <Alert alerts={alerts} />
+          <Alert  alerts={alerts} />
           <Navbar items={navItems} searchbar={searchbar} image={image} />
         </div>
 

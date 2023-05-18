@@ -74,7 +74,7 @@ function CartButton() {
       class="bg-transparent hover:bg-transparent border-none text-black"
       aria-label="open cart"
       data-deco={displayCart.value && "open-cart"}
-      loading={loading.value}
+      //loading={loading.value}
       onClick={onClick}
     >
       <div class="indicator">
