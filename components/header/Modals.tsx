@@ -40,7 +40,8 @@ function Modals({ menu, searchbar }: Props) {
         </Suspense>
       </Modal>
 
-      <Modal
+      {
+        /* <Modal
         title="Buscar"
         mode="sidebar-right"
         loading="lazy"
@@ -50,10 +51,11 @@ function Modals({ menu, searchbar }: Props) {
           displaySearchbar.value = false;
         }}
       >
-        <Suspense fallback={<Loading />}>
-          <Searchbar {...searchbar} />
+        <Suspense  fallback={<Loading />}>
+          <Searchbar  {...searchbar} />
         </Suspense>
-      </Modal>
+      </Modal> */
+      }
 
       <Modal
         title="Minha sacola"
