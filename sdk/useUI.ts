@@ -8,11 +8,14 @@ import { signal } from "@preact/signals";
 const displayCart = signal(false);
 const displayMenu = signal(false);
 const displaySearchbar = signal(false);
+const listingType  = signal("grid");
+
 
 const state = {
   displayCart,
   displayMenu,
   displaySearchbar,
+  listingType,
 };
 
 export const useUI = () => state;

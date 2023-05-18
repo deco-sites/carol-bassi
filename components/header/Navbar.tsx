@@ -8,6 +8,12 @@ import { navbarHeight } from "./constants.ts";
 import type { INavItem } from "./NavItem.tsx";
 import type { Props as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
 
+import { useUI } from "../../sdk/useUI.ts";
+
+
+
+
+
 function Navbar({ items, searchbar, image }: {
   items: INavItem[];
   searchbar: SearchbarProps;
@@ -16,6 +22,11 @@ function Navbar({ items, searchbar, image }: {
     mobile: LiveImage;
   };
 }) {
+  const { displaySearchbar } = useUI();
+  const open = displaySearchbar.value;
+
+  
+  
   return (
     <>
       {/* Mobile Version */}
@@ -59,10 +70,11 @@ function Navbar({ items, searchbar, image }: {
           {items.map((item) => <NavItem item={item} />)}
         </div>
 
-        <div class="flex-none w-44 flex items-center justify-end gap-2">
-          <HeaderButton variant="search" />
+        <div class="flex-none flex items-center justify-end gap-2">
+          <HeaderSearchMenu searchbar={searchbar}   /> 
 
-          <HeaderSearchMenu searchbar={searchbar} />
+          <HeaderButton variant="search"  />
+         
 
           <a
             class="bg-transparent hover:bg-transparent border-none text-black"
