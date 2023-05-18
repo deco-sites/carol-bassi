@@ -134,8 +134,6 @@ function colorHeader() {
       header1.classList.add("sm:static");
 
       alert1.classList.remove("sm:hidden");
-
-      
     }
   });
 }
