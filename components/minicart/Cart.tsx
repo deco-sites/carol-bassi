@@ -36,16 +36,9 @@ function Cart() {
   // Empty State
   if (isCartEmpty) {
     return (
-      <div class="flex flex-col justify-center items-center h-full gap-6">
-        <span class="font-medium text-2xl">Sua sacola está vazia</span>
-        <Button
-          class="btn-outline"
-          onClick={() => {
-            displayCart.value = false;
-          }}
-        >
-          Escolher produtos
-        </Button>
+      <div class="flex flex-col justify-center items-center h-full">
+        <span class="font-light text-[1rem]">Seu carrinho está vazio :(</span>
+        
       </div>
     );
   }
