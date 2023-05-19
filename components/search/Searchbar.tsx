@@ -115,14 +115,13 @@ function Searchbar({
           action={action}
           class="flex-grow flex gap-3 px-3 py-2 "
         >
-         
           <input
             ref={searchInputRef}
             id="search-input"
             class="flex-grow outline-none sm:bg-transparent   placeholder-shown:sibling:hidden"
             name={name}
             defaultValue={query}
-            placeholder = "O que está buscando?"
+            placeholder="O que está buscando?"
             onInput={(e) => {
               const value = e.currentTarget.value;
 
@@ -139,7 +138,7 @@ function Searchbar({
             aria-controls="search-suggestion"
             autocomplete="off"
           />
-         
+
           <Button
             class="btn-ghost hidden"
             aria-label="Search"
