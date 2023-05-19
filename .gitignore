@@ -75,6 +75,6 @@ deno.lock
 # db files
 .config.json
 
-live.gen.ts
+//live.gen.ts
 
 schemas.gen.json
