@@ -3,7 +3,6 @@ import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
-import { useState } from "preact/hooks";
 declare global {
   interface Window {
     DECO_SITES_STD: {
@@ -11,15 +10,7 @@ declare global {
     };
   }
 }
-function buttonClick() {
-  const { displaySearchbar } = useUI();
-  const bar: Element | null = document.querySelector("div[bar-search]");
-  if (bar?.classList.value.includes("hidden")) {
-    bar?.classList.remove("hidden");
-  } else {
-    bar?.classList.add("hidden");
-  }
-}
+
 function SearchButton() {
   const { displaySearchbar } = useUI();
 
@@ -27,10 +18,9 @@ function SearchButton() {
     <Button
       class="bg-transparent hover:bg-transparent border-none text-black"
       aria-label="search icon button"
-      // onClick={() => {
-      //   displaySearchbar.value = !displaySearchbar.peek();
-      // }}
-      onClick={() => buttonClick()}
+      onClick={() => {
+        displaySearchbar.value = !displaySearchbar.peek();
+      }}
     >
       <Icon id="MagnifyingGlass" width={20} height={20} strokeWidth={0.1} />
     </Button>
@@ -83,7 +73,6 @@ function CartButton() {
       class="bg-transparent hover:bg-transparent border-none text-black"
       aria-label="open cart"
       data-deco={displayCart.value && "open-cart"}
-      //loading={loading.value}
       onClick={onClick}
     >
       <div class="indicator">
