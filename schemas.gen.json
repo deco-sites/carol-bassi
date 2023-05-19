@@ -6592,7 +6592,7 @@
           ],
           "title": "Placeholder",
           "description": "Search bar default placeholder message",
-          "default": "What are you looking for?"
+          "default": "O que está buscando?"
         },
         "action": {
           "type": [

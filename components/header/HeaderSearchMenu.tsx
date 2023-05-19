@@ -17,7 +17,7 @@ export default function HeaderSearchMenu({ searchbar }: Props) {
   const shouldRender = self?.location;
   return (
     <div
-      class={"w-full hidden"}
+      class={"w-full "}
       bar-search=""
     >
       {shouldRender && (
