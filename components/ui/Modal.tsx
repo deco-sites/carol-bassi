@@ -86,7 +86,6 @@ const Modal = ({
           }`}
         >
           <header class="flex flex-row-reverse sm:flex-row px-4 py-6 justify-between items-center border-b border-base-200">
-            
             <div class="flex justify-center w-full items-center">
               <span class="font-semibold sm:font-light text-3xl ">{title}</span>
             </div>
@@ -94,13 +93,11 @@ const Modal = ({
             <Button class="btn btn-ghost" onClick={onClose}>
               <Icon id="XMark" width={30} height={30} strokeWidth={1} />
             </Button>
-
           </header>
 
           <div class="overflow-y-auto flex-grow flex flex-col">
             {loading === "lazy" ? lazy.value && children : children}
           </div>
-          
         </div>
       </section>
     </dialog>

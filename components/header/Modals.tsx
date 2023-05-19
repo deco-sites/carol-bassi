@@ -40,8 +40,6 @@ function Modals({ menu, searchbar }: Props) {
         </Suspense>
       </Modal>
 
-      
-
       <Modal
         title="Sacola"
         mode="sidebar-right"

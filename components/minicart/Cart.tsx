@@ -38,7 +38,6 @@ function Cart() {
     return (
       <div class="flex flex-col justify-center items-center h-full">
         <span class="font-light text-[1rem]">Seu carrinho está vazio :(</span>
-        
       </div>
     );
   }
