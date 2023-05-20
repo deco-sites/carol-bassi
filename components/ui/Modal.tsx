@@ -81,12 +81,14 @@ const Modal = ({
         onClose={onClose}
       >
         <section
-          class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
+          class={`w-full h-full flex bg-transparent ${
+            sectionStyles[mode]
+          }`}
         >
           <div
             class={`bg-base-100 flex flex-col max-h-full ${
               containerStyles[mode]
-            } max-w-[466px]`}
+            } w-[80%] max-[640px] md:max-w-[256px]`}
           >
             <header class="flex px-4 py-6 justify-between items-center ">
               <h1 class="text-center flex-grow">

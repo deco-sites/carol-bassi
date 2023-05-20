@@ -14,7 +14,6 @@ export interface Props {
   /**
    * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
    */
-  variant?: "aside" | "drawer";
   /**
    * @description Number of products per line on grid
    */
@@ -32,7 +31,6 @@ function NotFound() {
 
 function Result({
   page,
-  variant,
   banner,
 }: Omit<Props, "page"> & { page: ProductListingPage }) {
   const { products, filters, breadcrumb, pageInfo, sortOptions } = page;
@@ -44,17 +42,11 @@ function Result({
           sortOptions={sortOptions}
           filters={filters}
           breadcrumb={breadcrumb}
-          displayFilter={variant === "drawer"}
           products={products}
           banner={banner}
         />
-        <div class="container px-4 sm:py-10">
+        <div class="container px-4 sm:pb-10">
           <div class="flex flex-row">
-            {variant === "aside" && filters.length > 0 && (
-              <aside class="hidden sm:block w-min min-w-[250px]">
-                <Filters filters={filters} />
-              </aside>
-            )}
             <div class="flex-grow">
               <ProductGallery products={products} />
             </div>
