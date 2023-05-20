@@ -24,7 +24,7 @@ function SearchControls(
   const openSort = useSignal(false);
 
   return (
-    <div class="container flex flex-col justify-between mb-[86px] sm:gap-4 pt-[53px] md:pt-[100px]">
+    <div class="container flex flex-col justify-between mb-[86px] sm:gap-4 pt-[53px] md:pt-0">
       <Image src={banner} width={1543} height={363} class="w-full" />
       <div class=" px-4">
         <div class="flex flex-row items-center sm:p-0 mb-2 border-b border-[#00000030] justify-between">
@@ -56,7 +56,9 @@ function SearchControls(
             </p>
           </div>
         </div>
-
+        <div class="relative z-40">
+          <Filters filters={filters} />
+        </div>
         <div class="grid grid-cols-2 max-h-[30px] gap-2 ">
           <button
             class={displayFilter

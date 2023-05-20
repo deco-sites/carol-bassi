@@ -154,7 +154,7 @@ function Header(
       <script
         dangerouslySetInnerHTML={{ __html: `(${colorHeader.toString()})()` }}
       />
-      <header>
+      <header class="z-50">
         <div
           class="fixed bg-white w-full  z-50 sm:bg-transparent sm:fixed sm:hover:bg-white "
           header-color=""
