@@ -20,7 +20,7 @@ function Newsletter() {
           Cadastrar
         </button>
       </form>
-      <div class="flex flex-col justify-start items-start"  >
+      <div class="flex flex-col justify-start items-start">
         <span class="font-medium text-black text-2xl ">
           Follow us
         </span>
