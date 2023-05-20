@@ -24,10 +24,10 @@ const isIcon = (item: Item): item is IconItem =>
 
 function SectionItem({ item }: { item: Item }) {
   return (
-    <span class="text-primary-content">
+    <span>
       {isIcon(item)
         ? (
-          <div class="border-base-100 border border-solid py-1.5 px-2.5">
+          <div class="text-[#666] border-base-100 border border-solid py-1.5 px-2.5">
             <Icon
               id={item.icon}
               width={25}
@@ -51,7 +51,11 @@ function FooterContainer(
     children: ComponentChildren;
   },
 ) {
-  return <div class={`py-6 px-4 sm:py-12 sm:px-0 ${_class}`}>{children}</div>;
+  return (
+    <div class={`py-6 px-4 text-[#666] sm:px-0 ${_class}`}>
+      {children}
+    </div>
+  );
 }
 
 export interface Props {
@@ -60,20 +64,24 @@ export interface Props {
 
 function Footer({ sections = [] }: Props) {
   return (
-    <footer class="w-full bg-primary flex flex-col divide-y divide-primary-content">
+    <footer class="w-full bg-[#eee] text-black flex flex-col divide-y divide-primary-content">
       <div>
         <div class="container w-full flex flex-col divide-y divide-primary-content">
           <FooterContainer>
-            <Newsletter />
-          </FooterContainer>
-
-          <FooterContainer>
             {/* Desktop view */}
             <ul class="hidden sm:flex flex-row gap-20">
+              <div class="flex items-center max-w-[250px] ">
+                <span class="text-[13px] text-[#333] ">
+                  A Carol Bassi foi fundada em 2014 por Anna Carolina Bassi,
+                  empresária que cresceu ao redor da moda. A estilista então,
+                  criou sua própria label, que une seu DNA, seu espírito, sua
+                  alegria de viver e seu estilo pessoal.
+                </span>
+              </div>
               {sections.map((section) => (
                 <li>
                   <div>
-                    <span class="font-medium text-xl text-primary-content">
+                    <span class="font-normal text-xl text-black">
                       {section.label}
                     </span>
 
@@ -91,13 +99,16 @@ function Footer({ sections = [] }: Props) {
                   </div>
                 </li>
               ))}
+              <div class="text-[#666] ">
+                <Newsletter />
+              </div>
             </ul>
 
             {/* Mobile view */}
             <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
               {sections.map((section) => (
                 <li>
-                  <span class="text-primary-content">
+                  <span>
                     <details>
                       <summary>
                         {section.label}
@@ -126,7 +137,7 @@ function Footer({ sections = [] }: Props) {
       <div>
         <div class="container w-full">
           <FooterContainer class="flex justify-between w-full">
-            <span class="flex items-center gap-1 text-primary-content">
+            <span class="flex items-center gap-1">
               Powered by{" "}
               <a
                 href="https://www.deco.cx"
@@ -145,7 +156,6 @@ function Footer({ sections = [] }: Props) {
                   aria-label="Instagram logo"
                 >
                   <Icon
-                    class="text-primary-content"
                     width={32}
                     height={32}
                     id="Instagram"
@@ -161,7 +171,6 @@ function Footer({ sections = [] }: Props) {
                   aria-label="Discord logo"
                 >
                   <Icon
-                    class="text-primary-content"
                     width={32}
                     height={32}
                     id="Discord"

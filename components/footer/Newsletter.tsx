@@ -1,27 +1,58 @@
+import Icon, {
+  AvailableIcons,
+} from "deco-sites/fashion/components/ui/Icon.tsx";
+
 function Newsletter() {
   return (
-    <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-20">
-      <div class="flex flex-col gap-2 max-w-[400px]">
-        <span class="font-medium text-2xl text-primary-content">
-          Cadastre-se
-        </span>
-        <span class="text-sm text-primary-content">
-          Fique por dentro das novidades e ganhe 15% de desconto na primeira
-          compra. Para mais informações clique aqui.
-        </span>
-      </div>
-      <form class="flex flex-row items-center gap-2 font-body text-body w-full sm:w-[408px]">
+    <div class="flex flex-col justify-start items-start gap-2 ">
+      <span class="font-medium text-black text-2xl ">
+        Newsletter
+      </span>
+      <form class="flex flex-row items-center gap-2 font-body text-body w-full sm:w-[408px] rounded py-1 px-1  border border-solid border-black">
         <input
-          class="py-2 px-3 flex-grow bg-primary rounded text-primary-content border border-solid border-base-100"
+          class="py-2 px-3 flex-grow bg-transparent "
           placeholder="Seu e-mail"
         />
         <button
-          class="py-2 px-3 bg-base-100 text-base-content rounded"
+          class="py-2 px-3 bg-[#adcfdf] text-base-content rounded"
           type="button" // prevent form's default behavior
         >
           Cadastrar
         </button>
       </form>
+      <div class="flex flex-col justify-start items-start"  >
+        <span class="font-medium text-black text-2xl ">
+          Follow us
+        </span>
+        <div class="flex flex-row justify-start items-start gap-2">
+          <a
+            href="https://www.instagram.com/carolbassibrand/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram logo"
+          >
+            <Icon
+              width={40}
+              height={40}
+              id="Instagram"
+              strokeWidth={2}
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/carolbassibrand/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook logo"
+          >
+            <Icon
+              width={40}
+              height={40}
+              id="Facebook"
+              strokeWidth={2}
+            />
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
