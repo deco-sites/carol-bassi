@@ -7,6 +7,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { navbarHeight } from "./constants.ts";
 import type { INavItem } from "./NavItem.tsx";
 import type { Props as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
+import { useState } from "preact/hooks";
 
 import { useUI } from "../../sdk/useUI.ts";
 
@@ -28,21 +29,34 @@ function Navbar({ items, searchbar, image }: {
         style={{ height: navbarHeight }}
         class="md:hidden h-14 flex flex-row items-center border-b border-base-200 w-full pl-2 pr-2"
       >
-        <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[50%]">
-          <Image
-            src={image.mobile}
-            alt="logo"
-            class="w-[180px] h-[50px]"
-            width={180}
-            height={100}
-          />
-        </a>
-
-        <div class="flex w-[50%] justify-end items-end">
-          <HeaderButton variant="search" />
-          <HeaderButton variant="cart" />
-          <HeaderButton variant="menu" />
-        </div>
+        {!open &&
+          (
+            <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[50%]">
+              <Image
+                src={image.mobile}
+                alt="logo"
+                class="w-[180px] h-[50px]"
+                width={180}
+                height={100}
+              />
+            </a>
+          )}
+        {open
+          ? (
+            <div class="flex w-[100%] justify-end items-end">
+              <HeaderSearchMenu searchbar={searchbar} />
+              <HeaderButton variant="search" />
+              <HeaderButton variant="cart" />
+              <HeaderButton variant="menu" />
+            </div>
+          )
+          : (
+            <div class="flex w-[50%] justify-end items-end">
+              <HeaderButton variant="search" />
+              <HeaderButton variant="cart" />
+              <HeaderButton variant="menu" />
+            </div>
+          )}
       </div>
 
       {/* Desktop Version */}
@@ -65,7 +79,7 @@ function Navbar({ items, searchbar, image }: {
         </div>
 
         <div class="flex-none flex items-center justify-end gap-2">
-          <HeaderSearchMenu searchbar={searchbar} />
+          {open && <HeaderSearchMenu searchbar={searchbar} />}
 
           <HeaderButton variant="search" />
 

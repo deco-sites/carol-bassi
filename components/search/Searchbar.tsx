@@ -47,7 +47,7 @@ export interface EditableProps {
   /**
    * @title Placeholder
    * @description Search bar default placeholder message
-   * @default What are you looking for?
+   * @default O que está buscando?
    */
   placeholder?: string;
   /**
@@ -80,7 +80,7 @@ export type Props = EditableProps & {
 };
 
 function Searchbar({
-  placeholder = "What are you looking for?",
+  placeholder = "O que está buscando?",
   action = "/s",
   name = "q",
   query,
@@ -108,33 +108,20 @@ function Searchbar({
     : products;
 
   return (
-    <div class="flex flex-col p-4 md:py-6 md:px-20">
-      <div class="flex items-center gap-4">
+    <div class="flex flex-col">
+      <div class="flex  items-center ">
         <form
           id="searchbar"
           action={action}
-          class="flex-grow flex gap-3 px-3 py-2 border border-base-200"
+          class="flex-grow flex gap-3 px-3 py-2 "
         >
-          <Button
-            class="btn-ghost"
-            aria-label="Search"
-            htmlFor="searchbar"
-            tabIndex={-1}
-          >
-            <Icon
-              class="text-base-300"
-              id="MagnifyingGlass"
-              width={20}
-              height={20}
-              strokeWidth={0.01}
-            />
-          </Button>
           <input
             ref={searchInputRef}
             id="search-input"
-            class="flex-grow outline-none placeholder-shown:sibling:hidden"
+            class="flex-grow outline-none sm:bg-transparent   placeholder-shown:sibling:hidden"
             name={name}
             defaultValue={query}
+            placeholder="O que está buscando?"
             onInput={(e) => {
               const value = e.currentTarget.value;
 
@@ -147,26 +134,25 @@ function Searchbar({
 
               setSearch(value);
             }}
-            placeholder={placeholder}
             role="combobox"
             aria-controls="search-suggestion"
             autocomplete="off"
           />
-          <button
-            type="button"
-            aria-label="Clean search"
-            class="focus:outline-none"
-            tabIndex={-1}
-            onClick={(e) => {
-              e.stopPropagation();
-              if (searchInputRef.current === null) return;
 
-              searchInputRef.current.value = "";
-              setSearch("");
-            }}
+          <Button
+            class="btn-ghost hidden"
+            aria-label="Search"
+            htmlFor="searchbar"
+            tabIndex={-1}
           >
-            <span class="text-sm">limpar</span>
-          </button>
+            <Icon
+              class="text-base-300"
+              id="MagnifyingGlass"
+              width={20}
+              height={20}
+              strokeWidth={0.01}
+            />
+          </Button>
         </form>
         {variant === "desktop" && <CloseButton />}
       </div>
