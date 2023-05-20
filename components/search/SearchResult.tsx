@@ -7,6 +7,7 @@ import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
@@ -18,6 +19,7 @@ export interface Props {
    * @description Number of products per line on grid
    */
   columns: Columns;
+  banner: LiveImage;
 }
 
 function NotFound() {
@@ -31,18 +33,22 @@ function NotFound() {
 function Result({
   page,
   variant,
+  banner,
 }: Omit<Props, "page"> & { page: ProductListingPage }) {
   const { products, filters, breadcrumb, pageInfo, sortOptions } = page;
 
   return (
     <>
-      <div class="container px-4 sm:py-10">
+      <div >
         <SearchControls
           sortOptions={sortOptions}
           filters={filters}
           breadcrumb={breadcrumb}
           displayFilter={variant === "drawer"}
+          products={products}
+          banner={banner}
         />
+      <div class="container px-4 sm:py-10">
 
         <div class="flex flex-row">
           {variant === "aside" && filters.length > 0 && (
@@ -101,6 +107,7 @@ function Result({
           },
         }}
       />
+      </div>
     </>
   );
 }

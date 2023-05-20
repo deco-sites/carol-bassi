@@ -18,6 +18,7 @@ export type Props = JSX.IntrinsicElements["dialog"] & {
   mode?: "sidebar-right" | "sidebar-left" | "center";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
+  type?: "filter";
 };
 
 const dialogStyles = {
@@ -45,6 +46,7 @@ const Modal = ({
   onClose,
   children,
   loading,
+  type,
   ...props
 }: Props) => {
   const lazy = useSignal(false);
@@ -64,6 +66,52 @@ const Modal = ({
       lazy.value = true;
     }
   }, [open]);
+
+  if (type === "filter") {
+    return (
+      <dialog
+        {...props}
+        ref={ref}
+        class={`bg-transparent p-0 m-0 max-w-full w-full max-h-full h-full backdrop-opacity-50 ${
+          dialogStyles[mode]
+        } ${props.class ?? ""}`}
+        onClick={(e) =>
+          (e.target as HTMLDialogElement).tagName === "SECTION" && onClose?.()}
+        // @ts-expect-error - This is a bug in types.
+        onClose={onClose}
+      >
+        <section
+          class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
+        >
+          <div
+            class={`bg-base-100 flex flex-col max-h-full ${
+              containerStyles[mode]
+            } max-w-[466px]`}
+          >
+            <header class="flex px-4 py-6 justify-between items-center ">
+              <h1 class="text-center flex-grow">
+                <span class="font-normal  text-2xl text-center text-[#3f3f40]">
+                  {title}
+                </span>
+              </h1>
+              <Button class="btn btn-ghost" onClick={onClose}>
+                <Icon
+                  id="XMark"
+                  width={20}
+                  height={20}
+                  strokeWidth={2}
+                  class="text-[#3f3f40]"
+                />
+              </Button>
+            </header>
+            <div class="overflow-y-auto flex-grow flex flex-col">
+              {loading === "lazy" ? lazy.value && children : children}
+            </div>
+          </div>
+        </section>
+      </dialog>
+    );
+  }
 
   return (
     <dialog
