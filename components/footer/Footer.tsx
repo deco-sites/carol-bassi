@@ -105,7 +105,21 @@ function Footer({ sections = [] }: Props) {
             </ul>
 
             {/* Mobile view */}
+
             <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
+              <div class="flex items-center px-2">
+                <span class="text-[16px] text-[#333] ">
+                  A Carol Bassi foi fundada em 2014 por Anna Carolina Bassi,
+                  empresária que cresceu ao redor da moda. A estilista então,
+                  criou sua própria label, que une seu DNA, seu espírito, sua
+                  alegria de viver e seu estilo pessoal.
+                </span>
+              </div>
+
+              <div class="text-[#666] ">
+                <Newsletter />
+              </div>
+
               {sections.map((section) => (
                 <li>
                   <span>
@@ -129,6 +143,39 @@ function Footer({ sections = [] }: Props) {
                   </span>
                 </li>
               ))}
+              <div class="flex flex-col justify-start items-start">
+                <span class="font-normal text-black text-lg ">
+                  Follow us
+                </span>
+                <div class="flex flex-row justify-start items-start gap-2">
+                  <a
+                    href="https://www.instagram.com/carolbassibrand/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram logo"
+                  >
+                    <Icon
+                      width={35}
+                      height={35}
+                      id="Instagram"
+                      strokeWidth={2}
+                    />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/carolbassibrand/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook logo"
+                  >
+                    <Icon
+                      width={35}
+                      height={35}
+                      id="Facebook"
+                      strokeWidth={2}
+                    />
+                  </a>
+                </div>
+              </div>
             </ul>
           </FooterContainer>
         </div>

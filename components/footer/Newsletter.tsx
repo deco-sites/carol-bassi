@@ -5,22 +5,22 @@ import Icon, {
 function Newsletter() {
   return (
     <div class="flex flex-col justify-start items-start gap-2 ">
-      <span class="font-medium text-black text-2xl ">
+      <span class="font-medium text-black text-lg sm:text-2xl ">
         Newsletter
       </span>
-      <form class="flex flex-row items-center gap-2 font-body text-body w-full sm:w-[408px] rounded py-1 px-1  border border-solid border-black">
+      <form class="flex flex-col sm:flex-row items-center gap-2 font-body text-body w-full sm:w-[408px] rounded py-1 px-1  sm:border sm:border-solid sm:border-black">
         <input
-          class="py-2 px-3 flex-grow bg-transparent "
+          class="py-2 px-3 w-full sm:w-[300px] flex-grow rounded  bg-transparent border border-solid border-black sm:border-none"
           placeholder="Seu e-mail"
         />
         <button
-          class="py-2 px-3 bg-[#adcfdf] text-base-content rounded"
+          class="py-2 px-3 w-full sm:w-[100px] sm:bg-[#adcfdf] text-base-content rounded border border-solid border-black sm:border-none"
           type="button" // prevent form's default behavior
         >
           Cadastrar
         </button>
       </form>
-      <div class="flex flex-col justify-start items-start">
+      <div class=" hidden sm:flex flex-col justify-start items-start">
         <span class="font-medium text-black text-2xl ">
           Follow us
         </span>
