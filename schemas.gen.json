@@ -83,6 +83,7 @@
               "deco-sites/carol-bassi/sections/BannerGrid.tsx",
               "deco-sites/carol-bassi/sections/BannerMovie.tsx",
               "deco-sites/carol-bassi/sections/BannerPLP.tsx",
+              "deco-sites/carol-bassi/sections/BannerSolo.tsx",
               "deco-sites/carol-bassi/sections/Carousel.tsx",
               "deco-sites/carol-bassi/sections/CookieConsent.tsx",
               "deco-sites/carol-bassi/sections/DesignSystem.tsx",
@@ -7549,6 +7550,30 @@
       "required": [],
       "title": "deco-sites/carol-bassi/components/ui/BannerPLP.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9jb21wb25lbnRzL3VpL0Jhbm5lclNvbG8udHN4@Props": {
+      "type": "object",
+      "properties": {
+        "srcDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Desktop"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Image alt text",
+          "title": "Alt"
+        },
+        "href": {
+          "type": "string",
+          "description": "When you click you go to",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "alt",
+        "href"
+      ],
+      "title": "deco-sites/carol-bassi/components/ui/BannerSolo.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner": {
       "type": "object",
       "properties": {
@@ -10984,6 +11009,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9CYW5uZXJTb2xvLnRzeA==": {
+      "title": "deco-sites/carol-bassi/sections/BannerSolo.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9jb21wb25lbnRzL3VpL0Jhbm5lclNvbG8udHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/carol-bassi/sections/BannerSolo.tsx"
+          ],
+          "default": "deco-sites/carol-bassi/sections/BannerSolo.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9DYXJvdXNlbC50c3g=": {
       "title": "deco-sites/carol-bassi/sections/Carousel.tsx",
       "type": "object",
@@ -12372,6 +12418,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9CYW5uZXJQTFAudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9CYW5uZXJTb2xvLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9DYXJvdXNlbC50c3g="
