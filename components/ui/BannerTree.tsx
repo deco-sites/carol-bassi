@@ -26,7 +26,7 @@ export default function BannerSolo({
 }: Props) {
   return (
     <section class="container mt-[60px] w-full px-4 md:px-0 mx-auto">
-      <div >
+      <div>
         <Picture class="flex flex-row justify-center items-end">
           <a
             href={imagem1.href}
