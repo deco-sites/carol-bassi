@@ -96,6 +96,7 @@
               "deco-sites/carol-bassi/sections/ProductDetails.tsx",
               "deco-sites/carol-bassi/sections/Productrecomendation.tsx",
               "deco-sites/carol-bassi/sections/ProductShelf.tsx",
+              "deco-sites/carol-bassi/sections/ProductSimpleShelf.tsx",
               "deco-sites/carol-bassi/sections/SearchResult.tsx",
               "deco-sites/carol-bassi/sections/WhatsApp.tsx",
               "deco-sites/carol-bassi/sections/WishlistGallery.tsx",
@@ -8663,6 +8664,31 @@
       ],
       "title": "deco-sites/carol-bassi/components/product/ProductShelf.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9jb21wb25lbnRzL3Byb2R1Y3QvUHJvZHVjdFNpbXBsZVNoZWxmLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "title": "Products"
+        },
+        "itemsPerPage": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Items Per Page"
+        }
+      },
+      "required": [
+        "title",
+        "products"
+      ],
+      "title": "deco-sites/carol-bassi/components/product/ProductSimpleShelf.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9jb21wb25lbnRzL3Byb2R1Y3QvUHJvZHVjdEdhbGxlcnkudHN4@Columns": {
       "type": "object",
       "properties": {
@@ -11326,6 +11352,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9Qcm9kdWN0U2ltcGxlU2hlbGYudHN4": {
+      "title": "deco-sites/carol-bassi/sections/ProductSimpleShelf.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9jb21wb25lbnRzL3Byb2R1Y3QvUHJvZHVjdFNpbXBsZVNoZWxmLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/carol-bassi/sections/ProductSimpleShelf.tsx"
+          ],
+          "default": "deco-sites/carol-bassi/sections/ProductSimpleShelf.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9TZWFyY2hSZXN1bHQudHN4": {
       "title": "deco-sites/carol-bassi/sections/SearchResult.tsx",
       "type": "object",
@@ -12527,6 +12574,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9Qcm9kdWN0U2hlbGYudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9Qcm9kdWN0U2ltcGxlU2hlbGYudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9zZWN0aW9ucy9TZWFyY2hSZXN1bHQudHN4"

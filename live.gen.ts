@@ -33,9 +33,10 @@ import * as $$$$$$$$12 from "./sections/LinkTree.tsx";
 import * as $$$$$$$$13 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$14 from "./sections/Productrecomendation.tsx";
 import * as $$$$$$$$15 from "./sections/ProductShelf.tsx";
-import * as $$$$$$$$16 from "./sections/SearchResult.tsx";
-import * as $$$$$$$$17 from "./sections/WhatsApp.tsx";
-import * as $$$$$$$$18 from "./sections/WishlistGallery.tsx";
+import * as $$$$$$$$16 from "./sections/ProductSimpleShelf.tsx";
+import * as $$$$$$$$17 from "./sections/SearchResult.tsx";
+import * as $$$$$$$$18 from "./sections/WhatsApp.tsx";
+import * as $$$$$$$$19 from "./sections/WishlistGallery.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -189,9 +190,10 @@ const manifest = {
     "deco-sites/carol-bassi/sections/ProductDetails.tsx": $$$$$$$$13,
     "deco-sites/carol-bassi/sections/Productrecomendation.tsx": $$$$$$$$14,
     "deco-sites/carol-bassi/sections/ProductShelf.tsx": $$$$$$$$15,
-    "deco-sites/carol-bassi/sections/SearchResult.tsx": $$$$$$$$16,
-    "deco-sites/carol-bassi/sections/WhatsApp.tsx": $$$$$$$$17,
-    "deco-sites/carol-bassi/sections/WishlistGallery.tsx": $$$$$$$$18,
+    "deco-sites/carol-bassi/sections/ProductSimpleShelf.tsx": $$$$$$$$16,
+    "deco-sites/carol-bassi/sections/SearchResult.tsx": $$$$$$$$17,
+    "deco-sites/carol-bassi/sections/WhatsApp.tsx": $$$$$$$$18,
+    "deco-sites/carol-bassi/sections/WishlistGallery.tsx": $$$$$$$$19,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$4,
     "deco-sites/std/sections/configOCC.global.tsx": i2$$$$5,
