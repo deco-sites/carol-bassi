@@ -64,12 +64,12 @@ export interface Props {
 
 function Footer({ sections = [] }: Props) {
   return (
-    <footer class="w-full bg-[#eee] text-black flex flex-col divide-y divide-primary-content">
+    <footer class="w-full bg-[#eee] text-black flex flex-col divide-y divide-primary-content mt-[50px]">
       <div>
         <div class="container w-full flex flex-col divide-y divide-primary-content">
           <FooterContainer>
             {/* Desktop view */}
-            <ul class="hidden md:flex flex-row gap-20">
+            <ul class="hidden md:flex flex-row justify-center gap-10">
               <div class="flex items-center max-w-[250px] ">
                 <span class="text-[13px] text-[#333] ">
                   A Carol Bassi foi fundada em 2014 por Anna Carolina Bassi,
@@ -99,7 +99,7 @@ function Footer({ sections = [] }: Props) {
                   </div>
                 </li>
               ))}
-              <div class="text-[#666] ">
+              <div class=" min-w-[250px] ">
                 <Newsletter />
               </div>
             </ul>
