@@ -52,7 +52,7 @@ export interface Props {
    * @description When you click you go to
    */
   href: string;
-  srcMobile?:LiveImage;
+  srcMobile?: LiveImage;
 }
 
 const MOBILE_COLUMNS = {
@@ -107,14 +107,34 @@ export default function BannnerGrid({
           } ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]} `}
         >
           <div class="w-full h-full m-0 p-o b">
-          <video src={srcDesktop} alt={alt} autoPlay muted loop preload="auto" webkit-playsinline x5-playsinline playsInline 
-          class="hidden w-full h-full sm:inline-block">
-            Video não suportado!
-          </video>
-          <video src={srcMobile} alt={alt} autoPlay muted loop preload="auto" webkit-playsinline x5-playsinline playsInline 
-          class="sm:hidden w-full h-full inline-block">
-            Video não suportado!
-          </video>
+            <video
+              src={srcDesktop}
+              alt={alt}
+              autoPlay
+              muted
+              loop
+              preload="auto"
+              webkit-playsinline
+              x5-playsinline
+              playsInline
+              class="hidden w-full h-full sm:inline-block"
+            >
+              Video não suportado!
+            </video>
+            <video
+              src={srcMobile}
+              alt={alt}
+              autoPlay
+              muted
+              loop
+              preload="auto"
+              webkit-playsinline
+              x5-playsinline
+              playsInline
+              class="sm:hidden w-full h-full inline-block"
+            >
+              Video não suportado!
+            </video>
           </div>
         </a>
       </div>
