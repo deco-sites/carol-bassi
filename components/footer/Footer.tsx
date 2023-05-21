@@ -69,7 +69,7 @@ function Footer({ sections = [] }: Props) {
         <div class="container w-full flex flex-col divide-y divide-primary-content">
           <FooterContainer>
             {/* Desktop view */}
-            <ul class="hidden sm:flex flex-row gap-20">
+            <ul class="hidden md:flex flex-row gap-20">
               <div class="flex items-center max-w-[250px] ">
                 <span class="text-[13px] text-[#333] ">
                   A Carol Bassi foi fundada em 2014 por Anna Carolina Bassi,
@@ -106,7 +106,7 @@ function Footer({ sections = [] }: Props) {
 
             {/* Mobile view */}
 
-            <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
+            <ul class="flex flex-col md:hidden md:flex-row gap-4">
               <div class="flex items-center px-2">
                 <span class="text-[16px] text-[#333] ">
                   A Carol Bassi foi fundada em 2014 por Anna Carolina Bassi,
