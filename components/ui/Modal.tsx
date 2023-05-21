@@ -81,9 +81,7 @@ const Modal = ({
         onClose={onClose}
       >
         <section
-          class={`w-full h-full flex bg-transparent ${
-            sectionStyles[mode]
-          }`}
+          class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
         >
           <div
             class={`bg-base-100 flex flex-col max-h-full ${
