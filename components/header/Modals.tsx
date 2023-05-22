@@ -21,8 +21,8 @@ interface Props {
   searchbar?: SearchbarProps;
 }
 
-function Modals({ menu, searchbar, }: Props) {
-  const { displayCart, displayMenu, displaySearchbar, } = useUI();
+function Modals({ menu, searchbar }: Props) {
+  const { displayCart, displayMenu, displaySearchbar } = useUI();
 
   return (
     <>
