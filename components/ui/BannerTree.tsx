@@ -2,7 +2,8 @@ import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Item {
-  src: LiveImage;
+  src?: LiveImage;
+  srcMobile?: LiveImage;
   /**
    * @description Image alt text
    */
@@ -27,45 +28,82 @@ export default function BannerSolo({
   return (
     <section class="container mt-[60px] w-full px-4 md:px-0 mx-auto">
       <div>
-        <Picture class="flex flex-row justify-center items-end">
+        <Picture class="flex flex-col items-center gap-3 sm:gap-0 sm:flex-row justify-center sm:items-end">
           <a
             href={imagem1.href}
             class="overflow-hidden"
           >
-            <img
-              class="w-full hidden sm:flex"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={imagem1.src}
-              alt={imagem1.alt}
-              decoding="async"
-              loading="lazy"
-            />
+            {imagem1.src && (
+              <img
+                class="w-full hidden sm:flex"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem1.src}
+                alt={imagem1.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
+            {imagem1.srcMobile && (
+              <img
+                class="w-full sm:hidden"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem1.srcMobile}
+                alt={imagem1.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
           </a>
           <a
             href={imagem2.href}
             class="overflow-hidden"
           >
-            <img
-              class="w-full hidden sm:flex"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={imagem2.src}
-              alt={imagem2.alt}
-              decoding="async"
-              loading="lazy"
-            />
+            {imagem2.src && (
+              <img
+                class="w-full hidden sm:flex"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem2.src}
+                alt={imagem2.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
+            {imagem2.srcMobile && (
+              <img
+                class="w-full sm:hidden"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem2.srcMobile}
+                alt={imagem2.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
           </a>
           <a
             href={imagem3.href}
             class="overflow-hidden"
           >
-            <img
-              class="w-full hidden sm:flex"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={imagem3.src}
-              alt={imagem3.alt}
-              decoding="async"
-              loading="lazy"
-            />
+            {imagem3.src && (
+              <img
+                class="w-full hidden sm:flex"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem3.src}
+                alt={imagem3.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
+            {imagem3.srcMobile &&
+              (
+                <img
+                  class="w-full sm:hidden"
+                  sizes="(max-width: 640px) 100vw, 30vw"
+                  src={imagem3.srcMobile}
+                  alt={imagem3.alt}
+                  decoding="async"
+                  loading="lazy"
+                />
+              )}
           </a>
         </Picture>
       </div>

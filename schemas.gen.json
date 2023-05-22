@@ -7583,6 +7583,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
           "title": "Src"
         },
+        "srcMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Mobile"
+        },
         "alt": {
           "type": "string",
           "description": "Image alt text",
@@ -7595,7 +7599,6 @@
         }
       },
       "required": [
-        "src",
         "alt",
         "href"
       ],
@@ -7637,44 +7640,26 @@
           "description": "mobile otimized image",
           "title": "Mobile"
         },
+        "secondImg": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Second Img"
+        },
         "alt": {
           "type": "string",
           "description": "Image's alt text",
           "title": "Alt"
         },
-        "action": {
-          "type": "object",
-          "properties": {
-            "href": {
-              "type": "string",
-              "title": "Href"
-            },
-            "title": {
-              "type": "string",
-              "title": "Title"
-            },
-            "subTitle": {
-              "type": "string",
-              "title": "Sub Title"
-            },
-            "label": {
-              "type": "string",
-              "title": "Label"
-            }
-          },
-          "required": [
-            "href",
-            "title",
-            "subTitle",
-            "label"
-          ],
-          "title": "Action"
+        "href": {
+          "type": "string",
+          "description": "when user clicks on the image, go to this link",
+          "title": "Href"
         }
       },
       "required": [
         "desktop",
         "mobile",
-        "alt"
+        "alt",
+        "href"
       ],
       "title": "Banner"
     },
@@ -7688,6 +7673,84 @@
     "ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Props": {
       "type": "object",
       "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "titleSub": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title Sub"
+        },
+        "titleDesktop": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Title Desktop"
+        },
+        "titleSubDesktop": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Title Sub Desktop"
+        },
+        "titleMobile": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Title Mobile"
+        },
+        "titleSubMobile": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Title Sub Mobile"
+        },
+        "sizeImgDescktop": {
+          "anyOf": [
+            {
+              "type": "number",
+              "const": 1
+            },
+            {
+              "type": "number",
+              "const": 2
+            },
+            {
+              "type": "number",
+              "const": 3
+            }
+          ],
+          "type": "number",
+          "title": "Size Img Descktop"
+        },
+        "sizeImgMobile": {
+          "anyOf": [
+            {
+              "type": "number",
+              "const": 1
+            },
+            {
+              "type": "number",
+              "const": 2
+            },
+            {
+              "type": "number",
+              "const": 3
+            }
+          ],
+          "type": "number",
+          "title": "Size Img Mobile"
+        },
         "images": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9jYXJvbC1iYXNzaS9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner[]",
           "title": "Images"
