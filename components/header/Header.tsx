@@ -137,7 +137,6 @@ function colorHeader() {
     }
   });
 }
-
 function Header(
   {
     alerts,
