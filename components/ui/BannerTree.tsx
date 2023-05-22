@@ -3,7 +3,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Item {
   src?: LiveImage;
-  srcMobile? : LiveImage;
+  srcMobile?: LiveImage;
   /**
    * @description Image alt text
    */
@@ -33,68 +33,78 @@ export default function BannerSolo({
             href={imagem1.href}
             class="overflow-hidden"
           >
-             {imagem1.src && <img
-              class="w-full hidden sm:flex"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={imagem1.src}
-              alt={imagem1.alt}
-              decoding="async"
-              loading="lazy"
-            />}
-              {imagem1.srcMobile && <img
-              class="w-full sm:hidden"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={imagem1.srcMobile}
-              alt={imagem1.alt}
-              decoding="async"
-              loading="lazy"
-            />}
+            {imagem1.src && (
+              <img
+                class="w-full hidden sm:flex"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem1.src}
+                alt={imagem1.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
+            {imagem1.srcMobile && (
+              <img
+                class="w-full sm:hidden"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem1.srcMobile}
+                alt={imagem1.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
           </a>
           <a
             href={imagem2.href}
             class="overflow-hidden"
           >
-             {imagem2.src && <img
-              class="w-full hidden sm:flex"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={imagem2.src}
-              alt={imagem2.alt}
-              decoding="async"
-              loading="lazy"
-            />}
-              {imagem2.srcMobile && <img
-              class="w-full sm:hidden"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={imagem2.srcMobile}
-              alt={imagem2.alt}
-              decoding="async"
-              loading="lazy"
-            />}
+            {imagem2.src && (
+              <img
+                class="w-full hidden sm:flex"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem2.src}
+                alt={imagem2.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
+            {imagem2.srcMobile && (
+              <img
+                class="w-full sm:hidden"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem2.srcMobile}
+                alt={imagem2.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
           </a>
           <a
             href={imagem3.href}
             class="overflow-hidden"
           >
-             {imagem3.src && <img
-              class="w-full hidden sm:flex"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={imagem3.src}
-              alt={imagem3.alt}
-              decoding="async"
-              loading="lazy"
-            />}
-            {imagem3.srcMobile && 
-            <img
-              class="w-full sm:hidden"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={imagem3.srcMobile}
-              alt={imagem3.alt}
-              decoding="async"
-              loading="lazy"
-            />}
-             
+            {imagem3.src && (
+              <img
+                class="w-full hidden sm:flex"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={imagem3.src}
+                alt={imagem3.alt}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
+            {imagem3.srcMobile &&
+              (
+                <img
+                  class="w-full sm:hidden"
+                  sizes="(max-width: 640px) 100vw, 30vw"
+                  src={imagem3.srcMobile}
+                  alt={imagem3.alt}
+                  decoding="async"
+                  loading="lazy"
+                />
+              )}
           </a>
-         
         </Picture>
       </div>
     </section>
