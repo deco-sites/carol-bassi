@@ -61,7 +61,7 @@ function Navbar({ items, searchbar, image }: {
 
       {/* Desktop Version */}
 
-      <div class="hidden md:flex flex-row h-[100px] justify-between items-center w-full pl-2 pr-6">
+      <div class="hidden md:flex flex-row h-[110px] justify-between items-center w-full pl-2 pr-6">
         <div class="flex-none">
           <a href="/" aria-label="Store logo" class="block px-4 py-3">
             <Image
