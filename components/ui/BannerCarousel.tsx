@@ -6,6 +6,7 @@ import { useId } from "preact/hooks";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { Children } from "preact/compat";
 import type { JSX } from "preact";
+import Image from "deco-sites/std/components/Image.tsx";
 
 type SliderProps = JSX.IntrinsicElements["ul"] & {
   snap?: string;
@@ -48,6 +49,16 @@ const SIZE_IMG = {
   1: "h-[700px] w-[500px]",
   2: "h-[450px] w-[300px]",
   3: "h-[255px] w-[370px]",
+};
+const SIZE_IMG_H = {
+  1: 700,
+  2: 450,
+  3: 255,
+};
+const SIZE_IMG_W = {
+  1: 500,
+  2: 300,
+  3: 370,
 };
 
 export function Slider({
@@ -97,7 +108,7 @@ export function SliderDots({ children, class: _class }: SliderDotsProps) {
 }
 
 function BannerItem(
-  { image, lcp, sizeImgMobile }: {
+  { image, lcp, sizeImgMobile = 1 }: {
     image: Banner;
     lcp?: boolean;
     sizeImgMobile: 1 | 2 | 3;
@@ -111,26 +122,29 @@ function BannerItem(
   } = image;
 
   return (
-    <div class={`relative ${SIZE_IMG[sizeImgMobile] ?? 1} overflow-y-hidden`}>
+    <div class={`relative ${SIZE_IMG[sizeImgMobile]} overflow-y-hidden`}>
       <a href={href}>
-        <Picture class="w-full" preload={lcp}>
-          <img
-            class={`w-full lg:h-full flex ${
-              image.secondImg ? "hover:hidden" : ""
-            }`}
+        <div class="w-full">
+          <Image
+            class={` flex ${image.secondImg ? "hover:hidden" : ""}`}
             loading={lcp ? "eager" : "lazy"}
             src={desktop}
             alt={alt}
+            width={SIZE_IMG_W[sizeImgMobile]}
+            height={SIZE_IMG_H[sizeImgMobile]}
           />
-          <img
-            class={`w-full lg:h-full hidden ${
-              image.secondImg ? "hover:flex" : ""
-            } `}
-            loading={lcp ? "eager" : "lazy"}
-            src={image.secondImg}
-            alt={alt}
-          />
-        </Picture>
+          {image.secondImg &&
+            (
+              <Image
+                class={` hidden ${image.secondImg ? "hover:flex" : ""} `}
+                loading={lcp ? "eager" : "lazy"}
+                src={image.secondImg}
+                alt={alt}
+                width={SIZE_IMG_W[sizeImgMobile]}
+                height={SIZE_IMG_H[sizeImgMobile]}
+              />
+            )}
+        </div>
       </a>
     </div>
   );
@@ -216,7 +230,7 @@ function BannerCarousel(
         >
           {images?.map((image, index) => (
             <div
-              class={` ${SIZE_IMG[sizeImgDescktop] ?? 1}   ${
+              class={` ${SIZE_IMG[sizeImgDescktop]}   ${
                 image.secondImg !== undefined
                   ? "order-transparent hover:border-base-200 group overflow-hidden hover:overflow-visible"
                   : ""
@@ -229,29 +243,28 @@ function BannerCarousel(
               >
                 <a
                   href={image.href}
-                  class={`w-full h-full ${
-                    image.secondImg !== undefined ? "contents" : ""
-                  }`}
+                  class={`${image.secondImg !== undefined ? "contents" : ""}`}
                 >
-                  <img
-                    class={`w-full h-full ${
+                  <Image
+                    class={`w-full ${
                       image.secondImg !== undefined
                         ? "flex transition-opacity opacity-100 md:group-hover:hidden md:group-hover:opacity-0"
                         : ""
                     }`}
                     src={image.desktop}
                     alt={image.alt}
-                    width={100}
-                    height={100}
+                    width={SIZE_IMG_W[sizeImgDescktop]}
+                    height={SIZE_IMG_H[sizeImgDescktop]}
                     decoding="async"
-                    loading="lazy"
                   />
                   {image.secondImg !== undefined
                     ? (
-                      <img
-                        class=" w-full h-full transition-opacity opacity-0 md:group-hover:opacity-100"
+                      <Image
+                        class="transition-opacity opacity-0 md:group-hover:opacity-100"
                         src={image.secondImg}
                         alt={image.alt}
+                        width={SIZE_IMG_W[sizeImgDescktop]}
+                        height={SIZE_IMG_H[sizeImgDescktop]}
                       />
                     )
                     : ""}

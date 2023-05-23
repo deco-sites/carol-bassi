@@ -36,21 +36,21 @@ export default function BannerSolo({
           >
             {imagem1.src && (
               <img
-                class="w-auto h-auto  hidden sm:flex"
+                class="hidden sm:flex"
                 src={imagem1.src}
                 alt={imagem1.alt}
-                width={100}
-                height={100}
+                width="auto"
+                height="auto"
                 decoding="async"
               />
             )}
             {imagem1.srcMobile && (
               <img
-                class="w-auto h-auto sm:hidden"
+                class=" sm:hidden"
                 src={imagem1.srcMobile}
                 alt={imagem1.alt}
-                width={100}
-                height={100}
+                width="auto"
+                height="auto"
                 decoding="async"
               />
             )}
@@ -61,21 +61,21 @@ export default function BannerSolo({
           >
             {imagem2.src && (
               <img
-                class="w-auto h-auto hidden sm:flex"
+                class=" hidden sm:flex"
                 src={imagem2.src}
                 alt={imagem2.alt}
-                width={100}
-                height={100}
+                width="auto"
+                height="auto"
                 decoding="async"
               />
             )}
             {imagem2.srcMobile && (
               <img
-                class="w-auto h-auto sm:hidden"
+                class=" sm:hidden"
                 src={imagem2.srcMobile}
                 alt={imagem2.alt}
-                width={100}
-                height={100}
+                width="auto"
+                height="auto"
                 decoding="async"
               />
             )}
@@ -86,22 +86,22 @@ export default function BannerSolo({
           >
             {imagem3.src && (
               <img
-                class="w-auto h-auto hidden sm:flex"
+                class=" hidden sm:flex"
                 src={imagem3.src}
                 alt={imagem3.alt}
-                width={100}
-                height={100}
+                width="auto"
+                height="auto"
                 decoding="async"
               />
             )}
             {imagem3.srcMobile &&
               (
                 <img
-                  class="w-auto h-auto sm:hidden"
+                  class=" sm:hidden"
                   src={imagem3.srcMobile}
                   alt={imagem3.alt}
-                  width={100}
-                  height={100}
+                  width="auto"
+                  height="auto"
                   decoding="async"
                 />
               )}
