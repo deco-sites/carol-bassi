@@ -36,7 +36,7 @@ export default function BannerSolo({
           >
             {imagem1.src && (
               <Image
-                class="w-full hidden sm:flex"
+                class="hidden sm:flex"
                 src={imagem1.src}
                 alt={imagem1.alt}
                 width={400}
@@ -46,7 +46,7 @@ export default function BannerSolo({
             )}
             {imagem1.srcMobile && (
               <Image
-                class="h-full object-cover sm:hidden"
+                class=" object-cover sm:hidden"
                 src={imagem1.srcMobile}
                 alt={imagem1.alt}
                 width={300}
@@ -61,7 +61,7 @@ export default function BannerSolo({
           >
             {imagem2.src && (
               <Image
-                class="w-full hidden sm:flex"
+                class=" hidden sm:flex"
                 src={imagem2.src}
                 alt={imagem2.alt}
                 width={600}
@@ -71,7 +71,7 @@ export default function BannerSolo({
             )}
             {imagem2.srcMobile && (
               <Image
-                class="h-full object-cover sm:hidden"
+                class=" object-cover sm:hidden"
                 src={imagem2.srcMobile}
                 alt={imagem2.alt}
                 width={300}
@@ -86,7 +86,7 @@ export default function BannerSolo({
           >
             {imagem3.src && (
               <Image
-                class="w-full hidden sm:flex"
+                class=" hidden sm:flex"
                 src={imagem3.src}
                 alt={imagem3.alt}
                 width={400}
@@ -97,7 +97,7 @@ export default function BannerSolo({
             {imagem3.srcMobile &&
               (
                 <Image
-                  class="h-full object-cover sm:hidden"
+                  class=" object-cover sm:hidden"
                   src={imagem3.srcMobile}
                   alt={imagem3.alt}
                   width={300}
