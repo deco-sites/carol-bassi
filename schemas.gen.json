@@ -6687,7 +6687,7 @@
           },
           "title": "Children"
         },
-        "image": {
+        "image1": {
           "type": "object",
           "properties": {
             "src": {
@@ -6700,10 +6700,79 @@
                 "null"
               ],
               "title": "Alt"
+            },
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "path": {
+              "type": "string",
+              "title": "Path"
             }
           },
-          "required": [],
-          "title": "Image"
+          "required": [
+            "title",
+            "path"
+          ],
+          "title": "Image1"
+        },
+        "image2": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Src"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            },
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "path": {
+              "type": "string",
+              "title": "Path"
+            }
+          },
+          "required": [
+            "title",
+            "path"
+          ],
+          "title": "Image2"
+        },
+        "image3": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Src"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            },
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "path": {
+              "type": "string",
+              "title": "Path"
+            }
+          },
+          "required": [
+            "title",
+            "path"
+          ],
+          "title": "Image3"
         }
       },
       "required": [
