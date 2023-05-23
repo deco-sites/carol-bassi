@@ -35,9 +35,8 @@ export default function BannerSolo({
             class="overflow-hidden"
           >
             {imagem1.src && (
-              <Image
-                class="w-full hidden sm:flex"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <img
+                class="w-auto h-auto  hidden sm:flex"
                 src={imagem1.src}
                 alt={imagem1.alt}
                 width={100}
@@ -46,9 +45,8 @@ export default function BannerSolo({
               />
             )}
             {imagem1.srcMobile && (
-              <Image
-                class="w-full sm:hidden"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <img
+                class="w-auto h-auto sm:hidden"
                 src={imagem1.srcMobile}
                 alt={imagem1.alt}
                 width={100}
@@ -62,9 +60,8 @@ export default function BannerSolo({
             class="overflow-hidden"
           >
             {imagem2.src && (
-              <Image
-                class="w-full hidden sm:flex"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <img
+                class="w-auto h-auto hidden sm:flex"
                 src={imagem2.src}
                 alt={imagem2.alt}
                 width={100}
@@ -73,9 +70,8 @@ export default function BannerSolo({
               />
             )}
             {imagem2.srcMobile && (
-              <Image
-                class="w-full sm:hidden"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <img
+                class="w-auto h-auto sm:hidden"
                 src={imagem2.srcMobile}
                 alt={imagem2.alt}
                 width={100}
@@ -89,9 +85,8 @@ export default function BannerSolo({
             class="overflow-hidden"
           >
             {imagem3.src && (
-              <Image
-                class="w-full hidden sm:flex"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <img
+                class="w-auto h-auto hidden sm:flex"
                 src={imagem3.src}
                 alt={imagem3.alt}
                 width={100}
@@ -101,9 +96,8 @@ export default function BannerSolo({
             )}
             {imagem3.srcMobile &&
               (
-                <Image
-                  class="w-full sm:hidden"
-                  sizes="(max-width: 640px) 100vw, 30vw"
+                <img
+                  class="w-auto h-auto sm:hidden"
                   src={imagem3.srcMobile}
                   alt={imagem3.alt}
                   width={100}
