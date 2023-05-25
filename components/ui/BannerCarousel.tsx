@@ -183,9 +183,7 @@ function BannerCarousel(
 
   return (
     <>
-      <div
-        class="flex w-full items-center gap-3 flex-col justify-center my-[30px]"
-      >
+      <div class="flex w-full items-center gap-3 flex-col justify-center my-[30px]">
         <span
           class={`font-bold text-[30px] ${
             titleDesktop ? "lg:flex" : "lg:hidden"
@@ -209,18 +207,19 @@ function BannerCarousel(
           <Slider class="carousel col-span-full row-start-1 row-end-5 lg:row-span-full  scrollbar-none gap-6">
             {images?.map((image, index) => (
               <Slider.Item
-              index={index}
-              class="carousel-item w-full flex justify-center"
-            >
-              <BannerItem
-                image={image}
-                sizeImgMobile={sizeImgMobile}
-                lcp={index === 0 && preload}
-              />
+                index={index}
+                class="carousel-item w-full flex justify-center"
+              >
+                <BannerItem
+                  image={image}
+                  sizeImgMobile={sizeImgMobile}
+                  lcp={index === 0 && preload}
+                />
               </Slider.Item>
             ))}
           </Slider>
-          {/* <ul class="col-start-1 flex gap-[10px] justify-self-center overflow-auto px-4 sm:hidden">
+          {
+            /* <ul class="col-start-1 flex gap-[10px] justify-self-center overflow-auto px-4 sm:hidden">
             {images!.map((img, index) => (
               <li>
                 <Slider.Dot index={index}>
@@ -230,8 +229,9 @@ function BannerCarousel(
                 </Slider.Dot>
               </li>
             ))}
-          </ul> */}
-          
+          </ul> */
+          }
+
           <ProgressiveDots images={images} interval={interval} />
 
           <SliderControllerJS
