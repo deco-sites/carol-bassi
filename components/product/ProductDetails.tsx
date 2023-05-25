@@ -28,8 +28,8 @@ export interface Props {
   variant?: Variant;
 }
 
-const WIDTH = 360;
-const HEIGHT = 500;
+const WIDTH = 500;
+const HEIGHT = 750;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
 /**
@@ -213,7 +213,7 @@ function Details({
       <>
         <div
           id={id}
-          class="grid grid-cols-1 gap-4 sm:grid-cols-[auto_auto] sm:grid-rows-1 sm:justify-center"
+          class="grid grid-cols-1 gap-4 sm:grid-cols-[auto_auto] sm:grid-rows-1 sm:justify-center sm:gap-[100px]"
         >
           {/* Image Slider */}
           <div class="relative sm:hidden">
@@ -257,12 +257,12 @@ function Details({
           </ul>
 
           {/* Product Info */}
-          <div class="px-4 sm:pl-6 sm:col-start-2 sm:row-start-1">
+          <div class="px-4 sm:pl-6 sm:col-start-2 sm:row-start-1 sm:max-w-[441px]">
             <ProductInfo page={page} />
           </div>
-          <ul class="hidden sm:flex flex-col gap-10 max-w-[834px] lg:grid lg:grid-cols-2 lg:gap-2">
+          <ul class="hidden sm:flex flex-col gap-10 col-start-1 lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-2">
             {images.map((img, index) => (
-              <li class="carousel-item">
+              <li class="carousel-item w-full ">
                 <Image
                   sizes="(max-width: 640px) 100vw, 24vw"
                   style={{ aspectRatio: ASPECT_RATIO }}
@@ -273,6 +273,7 @@ function Details({
                   // Preload LCP image for better web vitals
                   preload={index === 0}
                   loading={index === 0 ? "eager" : "lazy"}
+                  class="w-full"
                 />
               </li>
             ))}
@@ -311,7 +312,7 @@ function Details({
       </ul>
 
       {/* Product Info */}
-      <div class="px-4 sm:pr-0 sm:pl-6">
+      <div class="px-4 sm:pr-0 sm:pl-6 sm:max-w-[441px]">
         <ProductInfo page={page} />
       </div>
     </div>
@@ -331,7 +332,7 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
     : maybeVar;
 
   return (
-    <div class="container max-w-[1440px] py-0 sm:py-10">
+    <div class="c py-0 sm:py-10 sm:px-[46px] lg:pr-[100px]">
       {page ? <Details page={page} variant={variant} /> : <NotFound />}
     </div>
   );

@@ -35,7 +35,7 @@ function Toggle(
           Descrição
         </button>
       </div>
-      <p class="text-base pt-2">
+      <p class="text-base pt-2 sm:text-sm">
         {detailsToggle.value === "Descrição" ? description : specs}
       </p>
     </div>
