@@ -1,5 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 
 export interface Props {
   srcDesktop?: LiveImage;
@@ -26,14 +27,19 @@ export default function BannerSolo({
           class="overflow-hidden"
         >
           <Picture>
-            <img
-              class="w-full hidden sm:flex"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={srcDesktop}
-              alt={alt}
-              decoding="async"
-              loading="lazy"
-            />
+            {srcDesktop &&
+              (
+                <Image
+                  class="w-full hidden sm:flex"
+                  sizes="(max-width: 640px) 100vw, 30vw"
+                  src={srcDesktop}
+                  alt={alt}
+                  height={800}
+                  width={1600}
+                  decoding="async"
+                  loading="lazy"
+                />
+              )}
           </Picture>
         </a>
       </div>

@@ -1,5 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 
 export interface Item {
   src?: LiveImage;
@@ -34,23 +35,23 @@ export default function BannerSolo({
             class="overflow-hidden"
           >
             {imagem1.src && (
-              <img
-                class="w-full hidden sm:flex"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <Image
+                class="hidden sm:flex"
                 src={imagem1.src}
                 alt={imagem1.alt}
+                width={400}
+                height={700}
                 decoding="async"
-                loading="lazy"
               />
             )}
             {imagem1.srcMobile && (
-              <img
-                class="w-full sm:hidden"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <Image
+                class=" object-cover sm:hidden"
                 src={imagem1.srcMobile}
                 alt={imagem1.alt}
+                width={300}
+                height={400}
                 decoding="async"
-                loading="lazy"
               />
             )}
           </a>
@@ -59,23 +60,23 @@ export default function BannerSolo({
             class="overflow-hidden"
           >
             {imagem2.src && (
-              <img
-                class="w-full hidden sm:flex"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <Image
+                class=" hidden sm:flex"
                 src={imagem2.src}
                 alt={imagem2.alt}
+                width={600}
+                height={900}
                 decoding="async"
-                loading="lazy"
               />
             )}
             {imagem2.srcMobile && (
-              <img
-                class="w-full sm:hidden"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <Image
+                class=" object-cover sm:hidden"
                 src={imagem2.srcMobile}
                 alt={imagem2.alt}
+                width={300}
+                height={400}
                 decoding="async"
-                loading="lazy"
               />
             )}
           </a>
@@ -84,24 +85,24 @@ export default function BannerSolo({
             class="overflow-hidden"
           >
             {imagem3.src && (
-              <img
-                class="w-full hidden sm:flex"
-                sizes="(max-width: 640px) 100vw, 30vw"
+              <Image
+                class=" hidden sm:flex"
                 src={imagem3.src}
                 alt={imagem3.alt}
+                width={400}
+                height={700}
                 decoding="async"
-                loading="lazy"
               />
             )}
             {imagem3.srcMobile &&
               (
-                <img
-                  class="w-full sm:hidden"
-                  sizes="(max-width: 640px) 100vw, 30vw"
+                <Image
+                  class=" object-cover sm:hidden"
                   src={imagem3.srcMobile}
                   alt={imagem3.alt}
+                  width={300}
+                  height={400}
                   decoding="async"
-                  loading="lazy"
                 />
               )}
           </a>
