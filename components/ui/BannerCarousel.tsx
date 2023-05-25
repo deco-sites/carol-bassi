@@ -1,6 +1,8 @@
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
+import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
+import SliderJS from "deco-sites/fashion/components/ui/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
@@ -61,29 +63,29 @@ const SIZE_IMG_W = {
   3: 370,
 };
 
-export function Slider({
-  children,
-  snap = "snap-center",
-  class: _class = "gap-6 scrollbar-none",
-  ...props
-}: SliderProps) {
-  return (
-    <ul
-      data-slider
-      class={`grid grid-flow-col items-center overflow-x-auto overscroll-x-contain snap-x snap-mandatory ${_class}`}
-      {...props}
-    >
-      {Children.map(children, (child, index) => (
-        <li
-          data-slider-item={index}
-          class={snap}
-        >
-          {child}
-        </li>
-      ))}
-    </ul>
-  );
-}
+// export function Slider({
+//   children,
+//   snap = "snap-center",
+//   class: _class = "gap-6 scrollbar-none",
+//   ...props
+// }: SliderProps) {
+//   return (
+//     <ul
+//       data-slider
+//       class={`grid grid-flow-col items-center overflow-x-auto overscroll-x-contain snap-x snap-mandatory ${_class}`}
+//       {...props}
+//     >
+//       {Children.map(children, (child, index) => (
+//         <li
+//           data-slider-item={index}
+//           class={snap}
+//         >
+//           {child}
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// }
 
 type SliderDotsProps = JSX.IntrinsicElements["ol"];
 
@@ -182,7 +184,6 @@ function BannerCarousel(
   return (
     <>
       <div
-        id={id}
         class="flex w-full items-center gap-3 flex-col justify-center my-[30px]"
       >
         <span
@@ -205,15 +206,32 @@ function BannerCarousel(
           id={id}
           class=" relative grid px-4 lg:px-6 grid-cols-[48px_1fr_48px] lg:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_48px_22px] lg:grid-rows-[1fr_48px_1fr_48px] max-w-[1280px] xl:px-0"
         >
-          <Slider class="col-span-full row-start-1 row-end-5 lg:row-span-full  scrollbar-none gap-6">
+          <Slider class="carousel col-span-full row-start-1 row-end-5 lg:row-span-full  scrollbar-none gap-6">
             {images?.map((image, index) => (
+              <Slider.Item
+              index={index}
+              class="carousel-item w-full flex justify-center"
+            >
               <BannerItem
                 image={image}
                 sizeImgMobile={sizeImgMobile}
                 lcp={index === 0 && preload}
               />
+              </Slider.Item>
             ))}
           </Slider>
+          {/* <ul class="col-start-1 flex gap-[10px] justify-self-center overflow-auto px-4 sm:hidden">
+            {images!.map((img, index) => (
+              <li>
+                <Slider.Dot index={index}>
+                  <div class="py-5">
+                    <div class="w-[10px] h-[10px] bg-light-gray group-disabled:bg-light-blue rounded-full" />
+                  </div>
+                </Slider.Dot>
+              </li>
+            ))}
+          </ul> */}
+          
           <ProgressiveDots images={images} interval={interval} />
 
           <SliderControllerJS
